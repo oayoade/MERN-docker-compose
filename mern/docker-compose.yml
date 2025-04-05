@@ -28,6 +28,13 @@ services:
     volumes:
       - mongo-data:/data/db  
 
+  make-agent:
+    image: make-onprem-agent:0.1
+    restart: always
+    networks:
+      - mern_network
+    
+
 networks:
   mern_network:
     driver: bridge 
