@@ -1,40 +1,22 @@
-# A simple MERN stack application 
+# MERN Stack Deployment with Docker Compose + Make.com On-Premise Agent
 
-### Create a network for the docker containers
+## Overview
 
-`docker network create demo`
+This project provides a complete setup for deploying a **MERN stack application** using **Docker Compose**.  
+Additionally, it includes an integrated **Make.com On-Premise Agent** for automating workflows with your deployed app and services.
 
-### Build the client 
+---
 
-```sh
-cd mern/frontend
-docker build -t mern-frontend .
-```
+## What's Included
 
-### Run the client
+- **MongoDB** — NoSQL database
+- **Express.js** — Backend API framework
+- **React.js** — Frontend UI
+- **Node.js** — Backend runtime
+- **Make.com On-Premise Agent** — Connects your self-hosted services to make.com scenarios for automation purposes
 
-`docker run --name=frontend --network=demo -d -p 5173:5173 mern-frontend`
+All services are orchestrated via **Docker Compose** for easy setup and management.
 
-### Verify the client is running
+---
 
-Open your browser and type `http://localhost:5173`
-
-### Run the mongodb container
-
-`docker run --network=demo --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongodb:latest`
-
-### Build the server
-
-```sh
-cd mern/backend
-docker build -t mern-backend .
-```
-
-### Run the server
-
-`docker run --name=backend --network=demo -d -p 5050:5050 mern-backend`
-
-## Using Docker Compose
-
-`docker compose up -d`
 
